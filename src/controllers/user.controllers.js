@@ -160,8 +160,8 @@ const login = async (req, res) => {
                         const otp = Math.floor(100000 + Math.random() * 900000).toString();
                         user.otp = otp;
                         const otpExpiry = new Date(Date.now() + 2 * 60 * 1000); // OTP valid for 2 minutes
-                        user.otp = otp;
-                        user.otpExpiry = otpExpiry;
+                        // user.otp = otp;
+                        // user.otpExpiry = otpExpiry;
                         await user.save(); 
                         return res.status(200).json({ message: 'OTP resent successfully.', otp });
                     } catch (error) {
