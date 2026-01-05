@@ -4,14 +4,13 @@ const morgan = require('morgan');
 const connectDB = require('./src/config/db');
 require('dotenv').config();
 
-const userRoutes = require('./src/routes/user.routes');
+const userRoutes = require('./src/routes/auth.routes');
 
 const PORT = process.env.PORT || 2000;
 
 
 app.use(express.json());   
 app.use(morgan('dev'));                                       
-
 
 connectDB();
 
